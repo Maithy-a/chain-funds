@@ -40,7 +40,7 @@ Built with cutting-edge web technologies and trusted financial APIs like Plaid a
 
 ```bash
 # Clone the repo
-git clone https://github.com/maithy-a/finlink.git
+git clone https://github.com/Maithy-a/chain-funds.git
 cd finlink
 
 # Install dependencies
