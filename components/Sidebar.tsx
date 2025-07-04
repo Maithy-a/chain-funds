@@ -21,8 +21,7 @@ const Sidebar = ({ user }: SiderbarProps) => {
                         height={100}
                         className="size-[32px] text-black mx-xl:size-[14]"
                     />
-                    <span className="sidebar-logo text-black"
-                        style={{ fontFamily: 'Qurova, sans-serif' }} >
+                    <span className="sidebar-logo text-black font-qurova" >
                         CHAIN
                         <span className="bg-gradient-to-r from-sky-400 to-blue-700 bg-clip-text text-transparent">fUND</span>.
                     </span>
