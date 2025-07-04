@@ -1,9 +1,9 @@
-# Chain Funds
+# FinLink
 > One dashboard. All your banks. Real-time insights and secure transfers.
 
-Chain Funds is a modern, secure, and fully responsive financial dashboard that allows users to connect multiple bank accounts, visualize real-time transaction data, and send money to others—all from one unified interface.
+FinLink is a modern, secure, and fully responsive financial dashboard that allows users to connect multiple bank accounts, visualize real-time transaction data, and send money to others—all from one unified interface.
 
-Built with cutting-edge web technologies and trusted financial APIs like Plaid and Dwolla, Chain Funds simplifies financial management while keeping user data private and protected using SSR authentication and strong validation.
+Built with cutting-edge web technologies and trusted financial APIs like Plaid and Dwolla, FinLink simplifies financial management while keeping user data private and protected using SSR authentication and strong validation.
 
 ## ⎚ Live Demo
 
@@ -21,7 +21,7 @@ Built with cutting-edge web technologies and trusted financial APIs like Plaid a
 - Paginated view with filters (by bank, category, date)
 - Search and sort transactions
 - Dynamic data updates throughout the app upon actions like adding new banks or making transfers.
-- Send money to other Chain Funds users using **Dwolla**
+- Send money to other ChainFunds users using **Dwolla**
 - Input fields: recipient ID, amount, memo, etc.
 - Clean UI with a mobile-first design, adapting seamlessly across all devices.
 - Built with scalable, modular components for long-term maintainability.
@@ -40,7 +40,7 @@ Built with cutting-edge web technologies and trusted financial APIs like Plaid a
 
 ```bash
 # Clone the repo
-git clone https://github.com/Maithy-a/chain-funds.git
+git clone https://github.com/maithy-a/chain-funds.git
 cd chain-funds
 
 # Install dependencies
