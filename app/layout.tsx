@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "Chain Funds",
   description: "A platform for managing and tracking funds across multiple Banks.",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/icons/antv.svg",
     
   }
 };

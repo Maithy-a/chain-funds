@@ -1,25 +1,28 @@
+import { Building, Landmark, Wallet, Coins } from "lucide-react";
+
 export const sidebarLinks = [
   {
-    imgURL: "/icons/home.svg",
+    icon: Building,
     route: "/",
     label: "Home",
   },
   {
-    imgURL: "/icons/dollar-circle.svg",
+    icon: Landmark,
     route: "/my-banks",
     label: "My Banks",
   },
   {
-    imgURL: "/icons/transaction.svg",
+    icon: Wallet,
     route: "/transaction-history",
-    label: "Transaction History",
+    label: "Transactions",
   },
   {
-    imgURL: "/icons/money-send.svg",
+    icon: Coins,
     route: "/payment-transfer",
     label: "Transfer Funds",
   },
 ];
+
 
 // good_user / good_password - Bank of America
 export const TEST_USER_ID = "6627ed3d00267aa6fa3e";
