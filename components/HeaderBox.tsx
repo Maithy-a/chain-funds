@@ -6,12 +6,12 @@ const HeaderBox = ({
 }: HeaderBoxProps) => {
     return (
         <div className='header-box' >
-            <h1 className='header-box-title' >
+            <div className='header-box-title' >
                 {title},
                 {type === "greeting" && (
-                    <span className='ml-3 text-bankGradient font-qurova' >{user}</span>
+                    <span className='ml-3 text-bankGradient' >{user}</span>
                 )}
-            </h1>
+            </div>
             <p className='header-box-subtext' >{subtext}</p>
         </div>
     )

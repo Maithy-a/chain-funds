@@ -5,27 +5,33 @@ import Image from 'next/image'
 import { sidebarLinks } from '@/constants'
 import { cn } from '@/lib/utils'
 import { usePathname } from 'next/navigation'
+import { Separator } from "@/components/ui/separator"
 
 const Sidebar = ({ user }: SiderbarProps) => {
 
     const pathname = usePathname();
 
     return (
-        <section className='sidebar ' >
-            <nav className='flex flex-col gap-3' >
-                <Link href="/" className='mb-12 cursor-pointer items-center flex gap-1 w-fit' >
+        <section className='sidebar' >
+            <nav className='flex flex-col gap-4' >
+                <Link href="/" className='cursor-pointer w-fit 
+                flex gap-4 items-center text-nowrap py-1 md:p-3 2xl:p-3.5 justify-center xl:justify-start 
+                '>
                     <Image
                         src="/icons/antv.svg"
                         alt="chain funds logo icon"
-                        width={100}
-                        height={100}
-                        className="size-[32px] text-black mx-xl:size-[14]"
+                        width={28}
+                        height={28}
+                        className="size-[29px] mx-xl:size-[14] invert-0 dark:invert"
                     />
-                    <span className="sidebar-logo text-black font-qurova" >
-                        CHAIN
-                        <span className="bg-gradient-to-r from-sky-400 to-blue-700 bg-clip-text text-transparent">fUND</span>.
+                    <span className="sidebar-logo text-gray-800 dark:text-white font-qurova">
+                        CHAIN <span className="text-bankGradient">fUND</span> .
                     </span>
                 </Link>
+                <Separator
+                    className='mt-1 mb-10'
+                />
+
 
                 {sidebarLinks.map((item) => {
                     const Icon = item.icon;
@@ -42,7 +48,9 @@ const Sidebar = ({ user }: SiderbarProps) => {
                     )
                 }
                 )}
+
             </nav>
+
         </section>
     )
 }

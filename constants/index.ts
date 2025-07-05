@@ -1,25 +1,37 @@
-import { Building, Landmark, Wallet, Coins } from "lucide-react";
+
+import {
+  IconSmartHome,
+  IconApps,
+  IconHistory,
+  IconArrowsExchange2,
+  IconCirclesRelation
+} from "@tabler/icons-react"
 
 export const sidebarLinks = [
   {
-    icon: Building,
+    icon: IconSmartHome,
     route: "/",
-    label: "Home",
+    label: "Dashboard",
   },
   {
-    icon: Landmark,
+    icon: IconApps,
     route: "/my-banks",
-    label: "My Banks",
+    label: "My Accounts",
   },
   {
-    icon: Wallet,
+    icon: IconHistory,
     route: "/transaction-history",
     label: "Transactions",
   },
   {
-    icon: Coins,
+    icon: IconArrowsExchange2,
     route: "/payment-transfer",
-    label: "Transfer Funds",
+    label: "Payment Transfer",
+  },
+  {
+    icon: IconCirclesRelation,
+    route: "/connect-bank",
+    label: "Connect Bank",
   },
 ];
 
