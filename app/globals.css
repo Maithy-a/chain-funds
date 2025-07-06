@@ -257,7 +257,7 @@
 
   .profile-banner {
     background-image: url('/icons/gradient-mesh.svg');
-    @apply h-[70px] w-full bg-cover bg-no-repeat;
+    @apply h-[80px] w-full bg-cover bg-no-repeat;
   }
 
   .profile {
@@ -273,11 +273,11 @@
   }
 
   .profile-name {
-    @apply text-xl font-semibold text-gray-500;
+    @apply text-xl font-semibold text-gray-500 dark:text-neutral-300;
   }
 
   .profile-email {
-    @apply text-[12px] font-normal text-gray-500;
+    @apply text-[13px] font-normal text-gray-500 dark:text-neutral-300;
   }
 
 
