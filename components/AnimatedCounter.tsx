@@ -12,8 +12,8 @@ const AnimatedCounter = (
                 end={amount}
                 duration={3.75}
                 decimals={2}
-                prefix="$"
-            />
+                prefix="KES"
+            /> 
         </span>
     )
 }
