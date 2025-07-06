@@ -6,6 +6,8 @@ import { sidebarLinks } from '@/constants'
 import { cn } from '@/lib/utils'
 import { usePathname } from 'next/navigation'
 import { Separator } from "@/components/ui/separator"
+import ModeToggle from './themes/ModeToggle'
+
 
 const Sidebar = ({ user }: SiderbarProps) => {
 
@@ -20,30 +22,34 @@ const Sidebar = ({ user }: SiderbarProps) => {
                     <Image
                         src="/icons/antv.svg"
                         alt="chain funds logo icon"
-                        width={28}
-                        height={28}
+                        width={30}
+                        height={30}
                         className="size-[29px] mx-xl:size-[14] invert-0 dark:invert"
                     />
                     <span className="sidebar-logo text-gray-800 dark:text-white font-qurova">
-                        CHAIN <span className="text-bankGradient">fUND</span> .
+                        CHAIN <span className="text-bankGradient">fUND</span>.
                     </span>
                 </Link>
-                <Separator
-                    className='mt-1 mb-10'
-                />
+                <Separator className='mb-16' />
+                <div className='flex gap-3 absolute bottom-20' >
+                    <div className='border bg-accent rounded'>
+                        <ModeToggle />
+                    </div>
 
+                </div>
 
                 {sidebarLinks.map((item) => {
                     const Icon = item.icon;
                     const isActive = pathname === item.route || pathname.startsWith(`${item.route}/`);
 
                     return (
+
                         <Link href={item.route} key={item.label}
                             className={cn('sidebar-link', { 'bg-bank-gradient': isActive })}>
                             <span className={cn("relative size-6", { 'brightness-[3] invert-0': isActive })}>
-                                <Icon className={cn('sidebar-link-icon')} />
+                                <Icon className={cn('navlink-item', { '!text-white': isActive })} />
                             </span>
-                            <p className={cn('sidebar-label', { '!text-white': isActive })}>{item.label}</p>
+                            <p className={cn('navlink-item', { '!text-white': isActive })}>{item.label}</p>
                         </Link>
                     )
                 }

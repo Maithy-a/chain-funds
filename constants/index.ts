@@ -26,7 +26,7 @@ export const sidebarLinks = [
   {
     icon: IconArrowsExchange2,
     route: "/payment-transfer",
-    label: "Payment Transfer",
+    label: "Transfer Funds",
   },
   {
     icon: IconCirclesRelation,

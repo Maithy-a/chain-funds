@@ -173,6 +173,7 @@
   background: #7878a3;
 }
 
+
 @layer utilities {
   .input-class {
     @apply text-base placeholder:text-base rounded-lg border border-gray-300 text-gray-900 placeholder:text-gray-500;
@@ -251,11 +252,12 @@
 
   /* Right sidebar */
   .right-sidebar {
-    @apply hidden h-screen max-h-screen flex-col border-l border-gray-200 xl:flex w-[355px] xl:overflow-y-scroll;
+    @apply hidden h-screen max-h-screen flex-col border-l xl:flex w-[355px] xl:overflow-y-scroll;
   }
 
   .profile-banner {
-    @apply h-[120px] w-full bg-cover bg-no-repeat;
+    background-image: url('/icons/gradient-mesh.svg');
+    @apply h-[70px] w-full bg-cover bg-no-repeat;
   }
 
   .profile {
@@ -263,23 +265,24 @@
   }
 
   .profile-img {
-    @apply content-center absolute -top-8 size-24 rounded-full bg-gray-100 border-8 border-white p-2 shadow-sm;
+    @apply content-center absolute -top-8 size-18 rounded-full bg-gray-100 border-8 border-white p-2 shadow-sm ;
   }
 
   .profile-details {
-    @apply flex flex-col pt-24;
+    @apply flex flex-col pt-12;
   }
 
   .profile-name {
-    @apply text-2xl font-semibold text-gray-900;
+    @apply text-xl font-semibold text-gray-500;
   }
 
   .profile-email {
-    @apply text-base font-normal text-gray-600;
+    @apply text-[12px] font-normal text-gray-500;
   }
 
+
   .banks {
-    @apply flex flex-col justify-between gap-8 px-6 py-8;
+    @apply flex flex-col justify-between gap-6 px-6 border-t py-3;
   }
 
   /* My Banks */
@@ -309,24 +312,24 @@
   }
 
   .header-box-title {
-    @apply text-2xl lg:text-3xl font-semibold text-gray-500 dark:text-gray-100;
+    @apply text-3xl lg:text-3xl font-semibold text-gray-700 dark:text-gray-100;
   }
 
   .header-box-subtext {
-    @apply text-sm lg:text-base font-normal text-gray-500 dark:text-gray-100;
+    @apply text-sm lg:text-base font-normal text-gray-700 dark:text-gray-400 italic;
   }
 
   /* Bank Card */
   .bank-card {
-    @apply relative flex h-[190px] w-full max-w-[320px] justify-between rounded-[20px] border border-white shadow-md backdrop-blur-[6px];
+    @apply flex w-full h-[175px] max-w-[320px] min-w-[290px] justify-between shadow-md border rounded-2xl backdrop-blur-[6px] overflow-hidden bg-gradient-to-b from-blue-700 to-blue-400 text-white dark:from-blue-400 dark:to-blue-600 transition-transform duration-300 ease-in-out will-change-transform;
   }
 
   .bank-card_content {
-    @apply relative z-10 flex size-full max-w-[228px] flex-col justify-between rounded-l-[20px] bg-gray-700 px-5 pb-4 pt-5;
+    @apply min-w-[225px] p-4 px-5 bg-gradient-to-b from-blue-700 to-blue-400 text-white dark:from-blue-400 dark:to-blue-600;
   }
 
   .bank-card_icon {
-    @apply flex size-full flex-1 flex-col items-end justify-between rounded-r-[20px] bg-cover bg-center bg-no-repeat py-5 pr-5;
+    @apply flex w-[80px] flex-col items-end justify-between rounded-r-[20px] bg-cover bg-center bg-no-repeat py-5 pr-5 relative z-10;
   }
 
   /* Bank Info */
@@ -349,11 +352,11 @@
 
   /* Mobile nav */
   .mobilenav-sheet {
-    @apply flex h-[calc(100vh-72px)] flex-col justify-between overflow-y-auto;
+    @apply flex flex-col gap-6 px-4;
   }
 
   .mobilenav-sheet_close {
-    @apply flex gap-3 items-center p-4 rounded-lg w-full max-w-60;
+    @apply flex w-full gap-6 p-2 rounded-md items-center hover:bg-gray-100 dark:hover:bg-neutral-900;
   }
 
   /* PlaidLink */
@@ -466,24 +469,18 @@
 
   /* Sidebar */
   .sidebar {
-    @apply sticky flex flex-col overflow-x-hidden justify-between left-0 top-0 h-screen pt-8 border-r border-gray-200 dark:border-neutral-900 bg-white dark:bg-neutral-950 text-white max-md:hidden sm:p-4 xl:p-6 xl:min-w-[260px] 2xl:w-[335px] transition-all;
+    @apply sticky flex flex-col overflow-x-hidden justify-between left-0 top-0 h-screen pt-8 border-r border-gray-200 dark:border-neutral-900 bg-white dark:bg-neutral-950 text-white max-md:hidden sm:p-4 xl:p-6 xl:min-w-[250px] 2xl:w-[335px] transition-all;
   }
 
   .sidebar-logo {
-    @apply text-2xl text-nowrap font-bold max-xl:hidden font-serif;
+    @apply text-2xl font-bold max-xl:hidden font-serif;
   }
 
   .sidebar-link {
-    @apply flex gap-4 items-center text-nowrap py-1 md:p-2.5 2xl:p-3 rounded-xl md:rounded-lg justify-center xl:justify-start transition-all hover:bg-gray-100 dark:hover:bg-neutral-900 hover:border-l-2;
+    @apply flex gap-4 items-center py-1 md:p-2.5 2xl:p-3 xl:rounded-xl sm:rounded-md justify-center xl:justify-start transition-all hover:bg-gray-100 dark:hover:bg-neutral-900;
   }
 
-  .sidebar-link-icon {
-    @apply text-gray-400 dark:text-neutral-400;
+  .navlink-item {
+    @apply text-[16px] font-semibold text-gray-500;
   }
-
-  .sidebar-label {
-    @apply text-base text-neutral-700 dark:text-neutral-500 font-semibold max-xl:hidden;
-  }
-
-
 }
