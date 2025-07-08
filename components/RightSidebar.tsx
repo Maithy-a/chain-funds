@@ -2,6 +2,7 @@ import { IconPlus } from '@tabler/icons-react'
 import Link from 'next/link'
 import React from 'react'
 import BankCard from './BankCard'
+import Image from 'next/image'
 
 const RightSidebar = ({ user, transactions, banks }: RightSidebarProps) => {
     return (
@@ -10,7 +11,13 @@ const RightSidebar = ({ user, transactions, banks }: RightSidebarProps) => {
                 <div className="profile-banner" />
                 <div className="profile">
                     <div className="profile-img">
-                        <span className="text-5xl font-semibold text-blue-500">{user.firstName[0]}</span>
+                        <span className="text-4xl tracking-tight font-semibold text-blue-500 select-none">
+                            <Image
+                                src={'/avatars/av_1.png'}
+                                alt='avatar'
+                                fill
+                            />
+                        </span>
                     </div>
 
                     <div className="profile-details">
@@ -24,19 +31,15 @@ const RightSidebar = ({ user, transactions, banks }: RightSidebarProps) => {
                 </div>
             </section>
 
-
-
             <section className='banks'>
                 <div className="flex w-full justify-between">
-                    <span className="text-[16px] font-semibold text-gray-500  " >
-                        My Banks
+                    <span className="text-[16px] font-semibold" >
+                        Banks
                     </span>
-                    <Link href={'/'} className='flex gap-2'>
+                    <Link href={'/'} className='flex gap-2 text-gray-500 hover:text-gray-800'>
                         <IconPlus
-                            stroke={1.8}
-                            size={20}
-                            className=' text-gray-500' />
-                        <h2 className=' text-[14px] font-semibold text-gray-500' >Add Bank</h2>
+                            size={22} />
+                        <h2 className='text-[14px] font-semibold'>Add Bank</h2>
                     </Link>
                 </div>
 
@@ -54,7 +57,7 @@ const RightSidebar = ({ user, transactions, banks }: RightSidebarProps) => {
                             </div>
 
                             {banks[1] && (
-                                <div className="absolute left-4 top-4 z-10 opacity-90 scale-[0.98]  hover:z-30 hover:scale-100 hover:opacity-100  transition-all duration-300 ease-in-out">
+                                <div className="absolute left-3 top-3 z-10 opacity-90 scale-[0.98]  hover:z-30 hover:scale-100 hover:opacity-100  transition-all duration-300 ease-in-out">
                                     <BankCard
                                         key={banks[1].$id}
                                         account={banks[1]}

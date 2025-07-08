@@ -1,43 +1,41 @@
 'use client';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
-import { useTheme } from 'next-themes';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const DoughnutChart = ({ accounts }: DoughnutChartProps) => {
-    const { theme } = useTheme();
 
-    const borderColor = theme === 'dark'
-        ? ['#000']
-        : ['#fff'];
 
     const data = {
-        labels: ['Bank A', 'Bank B', 'Bank C'],
+        labels: ['Bank A', 'Bank B', 'Bank C', 'Bank D'],
         datasets: [{
             label: 'Banks',
-            data: [10000, 1500, 2000],
+            data: [2500, 500, 1500, 1000],
             backgroundColor: [
                 '#0179FE',
-                '#85B7FF',
-                '#BED9FF',
+                '#4da1fe',
+                '#80bcff',
+                '#e6f2ff'
             ],
-            borderColor,
-            borderWidth: 3,
+            borderWidth: 0,
         }]
     };
 
     return (
-        <Doughnut data={data} 
-        options={{
-            cutout: '60%',
-            plugins:{
-                legend:{
-                    display:false,
-                }
-            }
-        }}
-        />
+        <>
+            <Doughnut data={data}
+                options={{
+                    cutout: '60%',
+                    plugins: {
+                        legend: {
+                            display: false,
+                        }
+                    }
+                }}
+            />
+        </>
+
     )
 }
 

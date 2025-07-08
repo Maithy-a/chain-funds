@@ -252,12 +252,12 @@
 
   /* Right sidebar */
   .right-sidebar {
-    @apply hidden h-screen max-h-screen flex-col border-l xl:flex w-[355px] xl:overflow-y-scroll;
+    @apply hidden h-screen max-h-screen flex-col border-l xl:flex w-[350px] xl:overflow-y-scroll;
   }
 
   .profile-banner {
-    background-image: url('/icons/gradient-mesh.svg');
-    @apply h-[80px] w-full bg-cover bg-no-repeat;
+    background-image: url('/gradient/blurry.svg');
+    @apply h-[80px] bg-cover bg-no-repeat rounded-xl m-2 border-none;
   }
 
   .profile {
@@ -265,7 +265,7 @@
   }
 
   .profile-img {
-    @apply content-center absolute -top-8 size-18 rounded-full bg-gray-100 border-8 border-white p-2 shadow-sm ;
+    @apply flex flex-col justify-center text-center absolute -top-[42px] bg-gray-100 border-8 border-white px-2 rounded-full size-20 shadow-sm overflow-hidden;
   }
 
   .profile-details {
@@ -273,16 +273,16 @@
   }
 
   .profile-name {
-    @apply text-xl font-semibold text-gray-500 dark:text-neutral-300;
+    @apply text-xl font-semibold;
   }
 
   .profile-email {
-    @apply text-[13px] font-normal text-gray-500 dark:text-neutral-300;
+    @apply text-[13px] font-normal text-gray-500;
   }
 
 
   .banks {
-    @apply flex flex-col justify-between gap-6 px-6 border-t py-3;
+    @apply flex flex-col justify-between gap-6 px-6 py-3;
   }
 
   /* My Banks */
@@ -316,16 +316,17 @@
   }
 
   .header-box-subtext {
-    @apply text-sm lg:text-base font-normal text-gray-700 dark:text-gray-400 italic;
+    @apply text-sm lg:text-base font-normal text-gray-500;
   }
 
-  /* Bank Card */
+  /* Bank Card (credit card) */
   .bank-card {
-    @apply flex w-full h-[175px] max-w-[320px] min-w-[290px] justify-between shadow-md border rounded-2xl backdrop-blur-[6px] overflow-hidden bg-gradient-to-b from-blue-700 to-blue-400 text-white dark:from-blue-400 dark:to-blue-600 transition-transform duration-300 ease-in-out will-change-transform;
+    @apply flex h-[175px] max-w-[300px] justify-between shadow-accent border-white rounded-2xl backdrop-blur-[10px] overflow-hidden transition-transform duration-300 ease-in-out will-change-transform text-white bg-center bg-cover bg-no-repeat;
+    background-image: url(/gradient/Worldmap.svg), linear-gradient(to bottom, oklab(62.31% -0.03321 -0.18515), #60A5FA);
   }
 
   .bank-card_content {
-    @apply min-w-[225px] p-4 px-5 bg-gradient-to-b from-blue-700 to-blue-400 text-white dark:from-blue-400 dark:to-blue-600;
+    @apply min-w-[225px] p-4 px-5;
   }
 
   .bank-card_icon {
@@ -469,7 +470,7 @@
 
   /* Sidebar */
   .sidebar {
-    @apply sticky flex flex-col overflow-x-hidden justify-between left-0 top-0 h-screen pt-8 border-r border-gray-200 dark:border-neutral-900 bg-white dark:bg-neutral-950 text-white max-md:hidden sm:p-4 xl:p-6 xl:min-w-[250px] 2xl:w-[335px] transition-all;
+    @apply sticky flex overflow-x-hidden justify-between left-0 top-0 h-screen border-r bg-white dark:bg-neutral-950 text-white max-md:hidden sm:p-4 xl:p-6 xl:min-w-[250px] 2xl:w-[335px] transition-all;
   }
 
   .sidebar-logo {

@@ -6,7 +6,6 @@ import { sidebarLinks } from '@/constants'
 import { cn } from '@/lib/utils'
 import { usePathname } from 'next/navigation'
 import { Separator } from "@/components/ui/separator"
-import ModeToggle from './themes/ModeToggle'
 
 
 const Sidebar = ({ user }: SiderbarProps) => {
@@ -14,8 +13,8 @@ const Sidebar = ({ user }: SiderbarProps) => {
     const pathname = usePathname();
 
     return (
-        <section className='sidebar' >
-            <nav className='flex flex-col gap-4' >
+        <aside className='sidebar' >
+            <nav className='flex flex-col gap-3' >
                 <Link href="/" className='cursor-pointer w-fit 
                 flex gap-4 items-center text-nowrap py-1 md:p-3 2xl:p-3.5 justify-center xl:justify-start 
                 '>
@@ -30,13 +29,7 @@ const Sidebar = ({ user }: SiderbarProps) => {
                         CHAIN <span className="text-bankGradient">fUND</span>.
                     </span>
                 </Link>
-                <Separator className='mb-16' />
-                <div className='flex gap-3 absolute bottom-20' >
-                    <div className='border bg-accent rounded'>
-                        <ModeToggle />
-                    </div>
-
-                </div>
+                <Separator className='mb-6 ' />
 
                 {sidebarLinks.map((item) => {
                     const Icon = item.icon;
@@ -55,9 +48,12 @@ const Sidebar = ({ user }: SiderbarProps) => {
                 }
                 )}
 
+            <section className='footer' >
+               FOOTER
+            </section>
             </nav>
 
-        </section>
+        </aside>
     )
 }
 
