@@ -1,7 +1,7 @@
 
 import {
   IconSmartHome,
-  IconApps,
+  IconUsers,
   IconHistory,
   IconArrowsExchange2,
   IconCirclesRelation
@@ -14,7 +14,7 @@ export const sidebarLinks = [
     label: "Dashboard",
   },
   {
-    icon: IconApps,
+    icon: IconUsers,
     route: "/my-banks",
     label: "My Accounts",
   },
