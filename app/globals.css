@@ -252,12 +252,12 @@
 
   /* Right sidebar */
   .right-sidebar {
-    @apply hidden h-screen max-h-screen flex-col border-l xl:flex w-[350px] xl:overflow-y-scroll;
+    @apply hidden h-screen xl:min-w-[250px] 2xl:w-[335px] max-h-screen flex-col border-l xl:flex xl:overflow-y-scroll;
   }
 
   .profile-banner {
     background-image: url('/gradient/blurry.svg');
-    @apply h-[80px] bg-cover bg-no-repeat rounded-xl m-2 border-none;
+    @apply h-[75px] bg-cover bg-no-repeat rounded-xl m-2 border-none;
   }
 
   .profile {
@@ -269,7 +269,7 @@
   }
 
   .profile-details {
-    @apply flex flex-col pt-12;
+    @apply flex flex-col pt-9;
   }
 
   .profile-name {
@@ -321,12 +321,11 @@
 
   /* Bank Card (credit card) */
   .bank-card {
-    @apply flex h-[175px] max-w-[300px] justify-between shadow-accent border-white rounded-2xl backdrop-blur-[10px] overflow-hidden transition-transform duration-300 ease-in-out will-change-transform text-white bg-center bg-cover bg-no-repeat;
-    background-image: url(/gradient/Worldmap.svg), linear-gradient(to bottom, oklab(62.31% -0.03321 -0.18515), #60A5FA);
+    @apply relative rounded-2xl overflow-hidden shadow-md xl:min-w-[270px] bg-gradient-to-br from-[#5b56ee] to-[#4acfb2] text-white transition-transform duration-300 ease-in-out will-change-transform;
   }
 
   .bank-card_content {
-    @apply min-w-[225px] p-4 px-5;
+    @apply p-5 h-full;
   }
 
   .bank-card_icon {
