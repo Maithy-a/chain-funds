@@ -32,7 +32,7 @@ const RightSidebar = ({ user, transactions, banks }: RightSidebarProps) => {
             </section>
 
             <section className='banks'>
-                <div className="flex w-full justify-between">
+                <div className="flex justify-between">
                     <span className="text-[16px] font-semibold" >
                         Banks
                     </span>
