@@ -39,10 +39,10 @@ const Sidebar = ({ user }: { user: any }) => {
                             key={item.route}
                             href={item.route}
                             className={cn(
-                                'flex items-center gap-4 rounded-lg px-3 py-2 text-sm font-medium transition-colors hover:bg-muted',
+                                'flex items-center gap-4 border-none rounded-lg px-3 py-2 text-sm font-medium transition-colors hover:bg-muted',
                                 {
-                                    'bg-bank-gradient text-white shadow-sm': isActive,
-                                    'text-gray-700 dark:text-gray-300': !isActive,
+                                    'bg-bank-gradient text-white shadow-sm ring-3 ring-blue-200 dark:ring-gray-700': isActive,
+                                    'text-gray-700 dark:text-gray-200': !isActive,
                                 }
                             )}
                         >

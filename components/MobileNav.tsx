@@ -65,7 +65,7 @@ const MobileNav = ({ user }: MobileNavProps) => {
                                     className={cn(
                                         'flex items-center gap-4 rounded-lg px-3 py-2 text-base font-medium transition-colors hover:bg-muted',
                                         {
-                                            'bg-bank-gradient text-white shadow-sm': isActive,
+                                            'bg-bank-gradient text-white shadow-sm ring-3 ring-blue-200 dark:ring-gray-700': isActive,
                                             'text-gray-700 dark:text-gray-300': !isActive,
                                         }
                                     )}
