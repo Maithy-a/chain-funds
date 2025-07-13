@@ -3,9 +3,10 @@ import {
   IconSmartHome,
   IconUsers,
   IconHistory,
-  IconArrowsExchange2,
-  IconCirclesRelation
+  IconMoneybagMove,
 } from "@tabler/icons-react"
+
+import { Cable } from 'lucide-react';
 
 export const sidebarLinks = [
   {
@@ -24,12 +25,12 @@ export const sidebarLinks = [
     label: "Transactions",
   },
   {
-    icon: IconArrowsExchange2,
+    icon: IconMoneybagMove,
     route: "/payment-transfer",
     label: "Transfer Funds",
   },
   {
-    icon: IconCirclesRelation,
+    icon: Cable,
     route: "/connect-bank",
     label: "Connect Bank",
   },

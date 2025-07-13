@@ -6,14 +6,14 @@ import Image from 'next/image'
 import { sidebarLinks } from '@/constants'
 import { cn } from '@/lib/utils'
 import { Separator } from '@/components/ui/separator'
+import ModeToggle from './themes/ModeToggle'
 
 const Sidebar = ({ user }: { user: any }) => {
     const pathname = usePathname()
 
     return (
-        <aside className="hidden md:flex sticky top-0 left-0 h-screen w-[250px] 2xl:w-[335px] flex-col border-r bg-white dark:bg-neutral-950 text-white px-4 py-6">
-            {/* Logo */}
-            <Link href="/" className="flex items-center gap-3 px-2 mb-6">
+        <aside className="sidebar">
+            <Link href="/" className="sidebar-logo">
                 <Image
                     src="/icons/antv.svg"
                     alt="Chain Funds Logo"
@@ -28,8 +28,7 @@ const Sidebar = ({ user }: { user: any }) => {
 
             <Separator className="mb-6" />
 
-            {/* Navigation */}
-            <nav className="flex flex-col gap-2">
+            <nav className="flex flex-col gap-3">
                 {sidebarLinks.map((item) => {
                     const Icon = item.icon
                     const isActive =
@@ -59,10 +58,9 @@ const Sidebar = ({ user }: { user: any }) => {
                 })}
             </nav>
 
-            {/* Footer */}
+
             <div className="mt-auto text-xs text-muted-foreground px-2 pt-4">
-                {/* Add settings, version, or logout link here */}
-                Footer
+                <ModeToggle/>
             </div>
         </aside>
     )
