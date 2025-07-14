@@ -10,7 +10,7 @@ const AnimatedCounter = (
         <span className="w-full">
             <CountUp
                 end={amount}
-                duration={3.75}
+                duration={3}
                 decimals={2}
                 prefix="KES "
             /> 
