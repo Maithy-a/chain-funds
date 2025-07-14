@@ -185,7 +185,7 @@
   }
 
   .bankGradient {
-    @apply text-white;
+    @apply text-white bg-gradient-to-r from-sky-400 to-blue-700;
   }
 
 
@@ -474,7 +474,10 @@
 
   .sidebar-logo {
     @apply flex items-center gap-3 px-2 mb-6;
-    
+  }
+
+  .logo{
+    @apply flex gap-3 items-center;
   }
 
   .sidebar-link {
