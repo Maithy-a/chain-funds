@@ -15,14 +15,14 @@ import {
     FormMessage,
 } from "@/components/ui/form"
 
-import { email, z } from "zod"
+import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { Loader } from 'lucide-react';
 import CustomInput from './CustomInput';
 import { authFormSchema } from '@/lib/utils';
-import SignIn from '@/app/(auth)/sign-in/page';
 import { useRouter } from 'next/navigation';
+import {signIn, signUp } from '@/lib/actions/user.actions';
 
 
 const AuthForm = ({ type }: { type: string }) => {
@@ -30,7 +30,6 @@ const AuthForm = ({ type }: { type: string }) => {
     const router = useRouter();
 
     const [user, setUser] = useState(null);
-
     const [isLoading, setIsLoading] = useState(false);
 
     const formSchema = authFormSchema(type);
@@ -51,16 +50,17 @@ const AuthForm = ({ type }: { type: string }) => {
             // Sign up with Appwrite and create plaid link token
 
             if (type === 'sign-up') {
-                //  const newUser = await signUp(data);
-                //  setUser(newUser);
+                const newUser = await signUp(data);
+                setUser(newUser);
             }
-            if (type === 'sign-in') {
-                // const response = await signIn({
-                //     email: data.email,
-                //     password: data.password,
-                // })
 
-                // if (response) router.push('/')
+            if (type === 'sign-in') {
+                 const response = await signIn({
+                     email: data.email,
+                     password: data.password,
+                 })
+
+                 if (response) router.push('/')
             }
         } catch (error) {
             console.log(error)
@@ -88,16 +88,16 @@ const AuthForm = ({ type }: { type: string }) => {
                 <div className="flex flex-col gap-1 md:gap-3">
                     <h1 className='text-2xl font-semibold' >
                         {user
-                            ? 'Link Account'
+                            ? 'Link Your Account'
                             : type === 'sign-in'
                                 ? 'Login to your account'
                                 : 'Create an account'
                         }
 
                         <p className='text-base font-normal text-neutral-500' >
-                            {type == 'sign-in'
-                                ? 'Enter your details below to login'
-                                : 'Set up an account to get Started.'
+                            {user
+                                ? 'Link your account to get started'
+                                : 'Please enter your details'
                             }
                         </p>
                     </h1>
@@ -116,8 +116,8 @@ const AuthForm = ({ type }: { type: string }) => {
                                 {/* Sign up Logic */}
                                 {type === "sign-up" && (<>
                                     <div className="flex gap-4 ">
-                                        <CustomInput control={form.control} name="firstname" label="First Name" placeholder="John" />
-                                        <CustomInput control={form.control} name="lastname" label="Last Name" placeholder="Doe" />
+                                        <CustomInput control={form.control} name="firstName" label="First Name" placeholder="John" />
+                                        <CustomInput control={form.control} name="lastName" label="Last Name" placeholder="Doe" />
                                     </div>
 
                                     <CustomInput control={form.control} name="address1" label="Address" placeholder="903" />
@@ -125,7 +125,7 @@ const AuthForm = ({ type }: { type: string }) => {
 
                                     <div className="flex gap-4">
                                         <CustomInput control={form.control} name="state" label="State" placeholder="ex: KE" />
-                                        <CustomInput control={form.control} name="postalcode" label="Postal Code" placeholder="ex: 90160" />
+                                        <CustomInput control={form.control} name="postalCode" label="Postal Code" placeholder="ex: 90160" />
                                     </div>
 
                                     <div className="flex gap-4">
@@ -139,13 +139,17 @@ const AuthForm = ({ type }: { type: string }) => {
                                 <CustomInput control={form.control} name="email" label="Email" placeholder="example@gmail.com" />
                                 <CustomInput control={form.control} name="password" label="Password" placeholder="Enter your password" />
 
-                                <Button type="submit" disabled={isLoading} className=' bankGradient border-none hover:ring-4 ring-sky-100  w-full' >
-                                    {isLoading ?
-                                        (<>
-                                            <Loader size={20} className='animate-spin' />
-                                        </>) : type === 'sign-in' ? 'Login' : 'Sign up'
-                                    }
-                                </Button>
+                                <div className="flex flex-col gap-4">
+                                    <Button type="submit" disabled={isLoading} className="form-btn">
+                                        {isLoading ? (
+                                            <>
+                                                <Loader size={20} className="animate-spin" /> &nbsp;
+                                                Loading...
+                                            </>
+                                        ) : type === 'sign-in'
+                                            ? 'Sign In' : 'Sign Up'}
+                                    </Button>
+                                </div>
                             </form>
                         </Form>
 

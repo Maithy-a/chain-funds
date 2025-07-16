@@ -16,6 +16,7 @@ import { sidebarLinks } from '@/constants'
 import { cn } from '@/lib/utils'
 import { usePathname } from 'next/navigation'
 import { Separator } from './ui/separator'
+import Footer from './Footer'
 
 const MobileNav = ({ user }: MobileNavProps) => {
     const pathname = usePathname()
@@ -68,8 +69,7 @@ const MobileNav = ({ user }: MobileNavProps) => {
                                             'bg-bank-gradient text-white shadow-sm ring-3 ring-blue-200 dark:ring-gray-700': isActive,
                                             'text-gray-700 dark:text-gray-300': !isActive,
                                         }
-                                    )}
-                                >
+                                    )}  >
                                     <Icon
                                         className={cn('size-5', {
                                             'text-white': isActive,
@@ -82,6 +82,7 @@ const MobileNav = ({ user }: MobileNavProps) => {
                         )
                     })}
                 </nav>
+                <Footer user={user}  type="mobile" />
             </SheetContent>
         </Sheet>
     )

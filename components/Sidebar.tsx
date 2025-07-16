@@ -6,7 +6,8 @@ import Image from 'next/image'
 import { sidebarLinks } from '@/constants'
 import { cn } from '@/lib/utils'
 import { Separator } from '@/components/ui/separator'
-import ModeToggle from './themes/ModeToggle'
+import Footer from './Footer'
+
 
 const Sidebar = ({ user }: { user: any }) => {
     const pathname = usePathname()
@@ -44,8 +45,7 @@ const Sidebar = ({ user }: { user: any }) => {
                                     'bg-bank-gradient text-white shadow-sm ring-3 ring-blue-200 dark:ring-gray-700': isActive,
                                     'text-gray-700 dark:text-gray-200': !isActive,
                                 }
-                            )}
-                        >
+                            )} >
                             <Icon
                                 className={cn('size-5', {
                                     'text-white': isActive,
@@ -59,9 +59,8 @@ const Sidebar = ({ user }: { user: any }) => {
             </nav>
 
 
-            <div className="mt-auto text-xs text-muted-foreground px-2 pt-4">
-                <ModeToggle/>
-            </div>
+            <Footer user={user} type="desktop" />
+
         </aside>
     )
 }
